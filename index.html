@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ammar Ahmed Ibrahim | Senior .NET Developer & ERP Specialist</title>
+  <meta name="description" content="الموقع الشخصي الاحترافي لعمار أحمد إبراهيم، Senior .NET Developer وERP Specialist وTechnical Project Manager بخبرة في الأنظمة المؤسسية والـ APIs والـ Microservices.">
+  <meta name="author" content="Ammar Ahmed Ibrahim">
+  <meta property="og:title" content="Ammar Ahmed Ibrahim | Senior .NET Developer & ERP Specialist">
+  <meta property="og:description" content="Portfolio احترافي يعرض خبرات عمار أحمد إبراهيم في تطوير أنظمة ERP، إدارة المشاريع التقنية، وبناء الحلول المؤسسية القابلة للتوسع.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_EG">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="loader" aria-hidden="true">
+    <div class="loader__ring"></div>
+    <span class="loader__text">Ammar Ahmed Ibrahim</span>
+  </div>
+
+  <a
+    class="floating-whatsapp show"
+    id="floatingWhatsApp"
+    href="https://wa.me/201007487031"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M19.05 4.91A9.82 9.82 0 0 0 12.03 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.74.45 3.44 1.31 4.95L2 22l5.33-1.39a9.9 9.9 0 0 0 4.7 1.2h.01c5.46 0 9.9-4.44 9.9-9.9a9.8 9.8 0 0 0-2.89-7Zm-7.02 15.22h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.16.82.84-3.08-.2-.32a8.2 8.2 0 0 1-1.27-4.33c0-4.54 3.7-8.24 8.25-8.24a8.18 8.18 0 0 1 5.84 2.42 8.18 8.18 0 0 1 2.41 5.84c0 4.55-3.7 8.24-8.21 8.24Zm4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.16.25-.64.81-.78.97-.14.17-.29.19-.54.07-.25-.13-1.05-.39-2-1.24-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.1-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.06s.89 2.39 1.02 2.56c.12.16 1.75 2.66 4.23 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29Z"/>
+    </svg>
+  </a>
+
+  <header class="site-header" id="top">
+    <nav class="navbar container">
+      <a href="#hero" class="brand">
+        <span class="brand__mark brand__mark--image">
+          <img src="assets/ammar-profile.jpg" alt="Ammar Ahmed Ibrahim">
+        </span>
+        <span class="brand__text">
+          <strong>Ammar Ahmed Ibrahim</strong>
+          <small data-i18n="brandRole">Senior .NET Developer</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="#hero" class="nav-link active" data-i18n="navHome">الرئيسية</a>
+        <a href="#about" class="nav-link" data-i18n="navAbout">نبذة</a>
+        <a href="#skills" class="nav-link" data-i18n="navSkills">المهارات</a>
+        <a href="#projects" class="nav-link" data-i18n="navProjects">المشاريع</a>
+        <a href="#experience" class="nav-link" data-i18n="navExperience">الخبرات</a>
+        <a href="#services" class="nav-link" data-i18n="navServices">الخدمات</a>
+        <a href="#contact" class="nav-link" data-i18n="navContact">التواصل</a>
+        <button class="lang-toggle" id="langToggle" type="button">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="hero">
+      <div class="hero__bg"></div>
+      <div class="container hero__content">
+        <div class="hero__text" data-reveal="up">
+          <span class="eyebrow" data-i18n="heroLocation">Kafr El Sheikh, Egypt</span>
+          <h1>
+            <span class="hero__name-ar" data-i18n="heroNameAr">عمار أحمد إبراهيم</span>
+            <span class="hero__name-en">Ammar Ahmed Ibrahim</span>
+          </h1>
+          <p class="hero__title">
+            <span id="typingText"></span>
+          </p>
+          <p class="hero__summary" data-i18n="heroSummary">
+            مطور برمجيات أول متخصص في أنظمة ERP والحلول المؤسسية، بخبرة قوية في بناء تطبيقات قابلة للتوسع باستخدام
+            ASP.NET Core وAngular وMicroservices، مع سجل عملي في إدارة المشاريع التقنية وتحليل متطلبات العملاء وقيادة الفرق.
+          </p>
+          <div class="hero__actions">
+            <a href="#" class="btn btn--primary" data-i18n="btnCv">Download CV</a>
+            <a href="#contact" class="btn btn--secondary" data-i18n="btnContact">Contact Me</a>
+            <a href="#projects" class="btn btn--ghost" data-i18n="btnProjects">View Projects</a>
+          </div>
+        </div>
+
+        <div class="hero__visual" data-reveal="left">
+          <div class="hero__cards">
+            <article class="glass-card hero-card hero-card--highlight">
+              <span class="hero-card__label" data-i18n="statYearsLabel">Years of Experience</span>
+              <strong>5+</strong>
+              <p data-i18n="statYearsText">Enterprise development, ERP delivery, and technical project leadership.</p>
+            </article>
+            <article class="glass-card hero-card">
+              <span class="hero-card__label" data-i18n="statFocusLabel">Core Focus</span>
+              <strong data-i18n="statFocusValue">ERP & Scalable APIs</strong>
+              <p data-i18n="statFocusText">Clean Architecture, business workflows, and high-performance backend systems.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading" data-reveal="up">
+          <span class="eyebrow" data-i18n="aboutEyebrow">نبذة احترافية</span>
+          <h2 data-i18n="aboutTitle">خبرة تقنية وتجارية تدعم الحلول المؤسسية</h2>
+          <p data-i18n="aboutLead">أقدّم مزيجًا متوازنًا بين الخبرة التقنية العميقة والفهم التجاري العملي، ما يساعد الشركات على تحويل المتطلبات المعقدة إلى أنظمة قابلة للتنفيذ وقابلة للتوسع.</p>
+        </div>
+
+        <div class="about-grid">
+          <article class="glass-card about-card" data-reveal="up">
+            <h3 data-i18n="aboutWhoTitle">من أنا</h3>
+            <p data-i18n="aboutP1">أنا عمار أحمد إبراهيم، Senior .NET Developer وERP Specialist وTechnical Project Manager بخبرة تتجاوز 5 سنوات في تصميم وتطوير الأنظمة المؤسسية، وإدارة فرق البرمجة، وتحليل متطلبات العملاء، وتقديم حلول برمجية احترافية تتوافق مع احتياجات السوق والشركات.</p>
+            <p data-i18n="aboutP2">أتميّز في بناء أنظمة ERP متكاملة، تطوير REST APIs، تطبيق مبادئ Clean Architecture وCQRS، والعمل على Microservices، بالإضافة إلى خبرة في ERP sales consultation وتحويل الاحتياجات التشغيلية إلى قيمة تقنية حقيقية.</p>
+          </article>
+
+          <div class="about-highlights">
+            <article class="glass-card highlight-card" data-reveal="up">
+              <h3 data-i18n="educationTitle">التعليم</h3>
+              <p>Nile Academy for Commercial Sciences and Computer Technology</p>
+              <span data-i18n="educationYear">Graduation Year: 2019</span>
+            </article>
+            <article class="glass-card highlight-card" data-reveal="up">
+              <h3 data-i18n="languagesTitle">اللغات</h3>
+              <p data-i18n="languagesPrimary">Arabic (Native)</p>
+              <span data-i18n="languagesSecondary">English (Very Good)</span>
+            </article>
+            <article class="glass-card highlight-card" data-reveal="up">
+              <h3 data-i18n="strengthsTitle">نقاط القوة</h3>
+              <p data-i18n="strengthsPrimary">ERP Systems, Team Leadership, Customer Analysis</p>
+              <span data-i18n="strengthsSecondary">Project Delivery & Enterprise Communication</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="skills">
+      <div class="container">
+        <div class="section-heading" data-reveal="up">
+          <span class="eyebrow" data-i18n="skillsEyebrow">المهارات التقنية</span>
+          <h2 data-i18n="skillsTitle">تقنيات حديثة لبناء حلول مؤسسية عالية الاعتمادية</h2>
+          <p data-i18n="skillsLead">مجموعة مهارات عملية تركز على الأداء، قابلية التوسع، وهيكلة الأنظمة المعقدة بشكل احترافي.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="glass-card skill-card" data-progress="95" data-reveal="up"><h3>ASP.NET Core</h3><div class="skill-bar"><span></span></div></article>
+          <article class="glass-card skill-card" data-progress="92" data-reveal="up"><h3>.NET Framework</h3><div class="skill-bar"><span></span></div></article>
+          <article class="glass-card skill-card" data-progress="88" data-reveal="up"><h3>Angular</h3><div class="skill-bar"><span></span></div></article>
+          <article class="glass-card skill-card" data-progress="94" data-reveal="up"><h3>SQL Server</h3><div class="skill-bar"><span></span></div></article>
+          <article class="glass-card skill-card" data-progress="91" data-reveal="up"><h3>Entity Framework Core</h3><div class="skill-bar"><span></span></div></article>
+          <article class="glass-card skill-card" data-progress="90" data-reveal="up"><h3>Clean Architecture</h3><div class="skill-bar"><span></span></div></article>
+          <article class="glass-card skill-card" data-progress="87" data-reveal="up"><h3>Microservices</h3><div class="skill-bar"><span></span></div></article>
+          <article class="glass-card skill-card" data-progress="93" data-reveal="up"><h3>REST APIs</h3><div class="skill-bar"><span></span></div></article>
+          <article class="glass-card skill-card" data-progress="86" data-reveal="up"><h3>Git & GitHub</h3><div class="skill-bar"><span></span></div></article>
+          <article class="glass-card skill-card" data-progress="84" data-reveal="up"><h3>JavaScript</h3><div class="skill-bar"><span></span></div></article>
+          <article class="glass-card skill-card" data-progress="89" data-reveal="up"><h3>HTML5 & CSS3</h3><div class="skill-bar"><span></span></div></article>
+          <article class="glass-card skill-card" data-progress="85" data-reveal="up"><h3>CQRS & SignalR</h3><div class="skill-bar"><span></span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading" data-reveal="up">
+          <span class="eyebrow" data-i18n="projectsEyebrow">أبرز المشاريع</span>
+          <h2 data-i18n="projectsTitle">حلول برمجية عملية لقطاعات متعددة</h2>
+          <p data-i18n="projectsLead">مشاريع مؤسسية مصممة لتحسين العمليات، دعم التوسع، وتقديم تجربة تشغيل قوية للشركات والعملاء.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="glass-card project-card" data-reveal="up">
+            <div class="project-card__media">ERP</div>
+            <h3>ERP System</h3>
+            <p data-i18n="projectErp">نظام ERP متكامل لإدارة الحسابات والمبيعات والمشتريات والمخزون والموردين والعملاء والتقارير المالية.</p>
+            <div class="project-card__tags"><span>ASP.NET Core</span><span>Angular</span><span>SQL Server</span><span>Clean Architecture</span></div>
+          </article>
+          <article class="glass-card project-card" data-reveal="up">
+            <div class="project-card__media">HR</div>
+            <h3>HR System</h3>
+            <p data-i18n="projectHr">نظام موارد بشرية متكامل يدير الحضور والانصراف والرواتب والإجازات والبيانات الوظيفية مع تكامل بصمة.</p>
+            <div class="project-card__tags"><span>ASP.NET Core API</span><span>SQL Server</span><span>Attendance Devices</span></div>
+          </article>
+          <article class="glass-card project-card" data-reveal="up">
+            <div class="project-card__media">ECOM</div>
+            <h3>E-Commerce Platform</h3>
+            <p data-i18n="projectEcom">منظومة تجارة إلكترونية تشمل الموقع والتطبيق ولوحة التحكم وتطبيق التوصيل مع إدارة الطلبات والدفع والتتبع.</p>
+            <div class="project-card__tags"><span>ASP.NET Core</span><span>Angular</span><span>Microservices</span><span>Payments</span></div>
+          </article>
+          <article class="glass-card project-card" data-reveal="up">
+            <div class="project-card__media">DLV</div>
+            <h3>Delivery System</h3>
+            <p data-i18n="projectDelivery">نظام لإدارة حركة الطلبات والتوصيل يربط العمليات الميدانية بالواجهات البرمجية والتقارير التشغيلية.</p>
+            <div class="project-card__tags"><span>REST APIs</span><span>Order Tracking</span><span>Operations</span></div>
+          </article>
+          <article class="glass-card project-card" data-reveal="up">
+            <div class="project-card__media">RST</div>
+            <h3>Restaurant System</h3>
+            <p data-i18n="projectRestaurant">نظام لإدارة المطاعم يشمل الطلبات والمنتجات والمستخدمين والتقارير لتحسين سرعة التشغيل ودقة المتابعة.</p>
+            <div class="project-card__tags"><span>ASP.NET Core APIs</span><span>SQL Server</span><span>Reports</span></div>
+          </article>
+          <article class="glass-card project-card" data-reveal="up">
+            <div class="project-card__media">مندوبين</div>
+            <h3>مندوبين System</h3>
+            <p data-i18n="projectDelegates">نظام متخصص لإدارة المندوبين ومتابعة الطلبات والتحركات وربط البيانات التشغيلية عبر APIs مرنة.</p>
+            <div class="project-card__tags"><span>APIs</span><span>Logistics</span><span>Tracking</span></div>
+          </article>
+          <article class="glass-card project-card" data-reveal="up">
+            <div class="project-card__media">DAL</div>
+            <h3>Dalel Platform</h3>
+            <p data-i18n="projectDalel">منصة تفاعلية تدعم المكالمات الصوتية والمرئية والدردشة الفورية والدفع الإلكتروني عبر تكامل Agora.</p>
+            <div class="project-card__tags"><span>Agora</span><span>ASP.NET Core</span><span>APIs</span><span>Payments</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="experience">
+      <div class="container">
+        <div class="section-heading" data-reveal="up">
+          <span class="eyebrow" data-i18n="expEyebrow">الخبرات المهنية</span>
+          <h2 data-i18n="expTitle">مسار مهني يجمع بين القيادة والتطوير والتحليل</h2>
+          <p data-i18n="expLead">أدوار احترافية متكاملة تركز على بناء الأنظمة وقيادة الفرق وفهم احتياجات العملاء والسوق.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="glass-card timeline-item" data-reveal="right">
+            <span class="timeline-item__year">Present</span>
+            <h3>Senior .NET Developer</h3>
+            <p data-i18n="exp1">قيادة تطوير الحلول المؤسسية باستخدام ASP.NET Core وSQL Server وClean Architecture مع التركيز على الأداء والتوسع.</p>
+          </article>
+          <article class="glass-card timeline-item" data-reveal="left">
+            <span class="timeline-item__year">Core Expertise</span>
+            <h3>ERP Specialist</h3>
+            <p data-i18n="exp2">تصميم وتنفيذ حلول ERP شاملة تشمل المحاسبة والمخازن والمشتريات والمبيعات والتقارير وسير العمل التشغيلي.</p>
+          </article>
+          <article class="glass-card timeline-item" data-reveal="right">
+            <span class="timeline-item__year">Leadership</span>
+            <h3>Technical Project Manager</h3>
+            <p data-i18n="exp3">إدارة فرق التطوير وتحليل متطلبات العملاء وتخطيط التنفيذ ومتابعة التسليم النهائي بما يحقق أهداف العمل.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading" data-reveal="up">
+          <span class="eyebrow" data-i18n="servicesEyebrow">الخدمات</span>
+          <h2 data-i18n="servicesTitle">خدمات تقنية موجهة للشركات والأنظمة المؤسسية</h2>
+          <p data-i18n="servicesLead">حلول احترافية للشركات التي تحتاج إلى أنظمة قابلة للنمو، تكاملات قوية، وتنفيذ منظم بجودة عالية.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="glass-card service-card" data-reveal="up"><h3 data-i18n="service1Title">ERP Development</h3><p data-i18n="service1Text">تطوير أنظمة ERP مخصصة تغطي العمليات المالية والإدارية والتشغيلية.</p></article>
+          <article class="glass-card service-card" data-reveal="up"><h3 data-i18n="service2Title">Web Application Development</h3><p data-i18n="service2Text">بناء تطبيقات ويب احترافية عالية الأداء بواجهات مرنة وتجربة استخدام قوية.</p></article>
+          <article class="glass-card service-card" data-reveal="up"><h3 data-i18n="service3Title">API Development</h3><p data-i18n="service3Text">تصميم وتنفيذ REST APIs آمنة وقابلة للتوسع لتكامل الأنظمة والخدمات.</p></article>
+          <article class="glass-card service-card" data-reveal="up"><h3 data-i18n="service4Title">System Architecture</h3><p data-i18n="service4Text">هيكلة الأنظمة باستخدام Clean Architecture وMicroservices وفق أفضل الممارسات.</p></article>
+          <article class="glass-card service-card" data-reveal="up"><h3 data-i18n="service5Title">Technical Consultation</h3><p data-i18n="service5Text">استشارات تقنية وتحليل متطلبات الأعمال وربطها بحلول برمجية قابلة للتنفيذ.</p></article>
+          <article class="glass-card service-card" data-reveal="up"><h3 data-i18n="service6Title">Software Project Management</h3><p data-i18n="service6Text">إدارة المشاريع التقنية ومتابعة فرق التطوير لضمان الجودة والالتزام بالتسليم.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stats" id="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <article class="glass-card stat-card" data-reveal="up">
+            <strong class="counter" data-target="5">0</strong>
+            <span data-i18n="counter1">Years Experience</span>
+          </article>
+          <article class="glass-card stat-card" data-reveal="up">
+            <strong class="counter" data-target="10">0</strong>
+            <span data-i18n="counter2">Projects Completed</span>
+          </article>
+          <article class="glass-card stat-card" data-reveal="up">
+            <strong>ERP</strong>
+            <span data-i18n="counter3">Specialist</span>
+          </article>
+          <article class="glass-card stat-card" data-reveal="up">
+            <strong>Team</strong>
+            <span data-i18n="counter4">Management</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="contact">
+      <div class="container">
+        <div class="section-heading" data-reveal="up">
+          <span class="eyebrow" data-i18n="contactEyebrow">تواصل معي</span>
+          <h2 data-i18n="contactTitle">جاهز لمناقشة مشروعك القادم</h2>
+          <p data-i18n="contactLead">إذا كنت تبحث عن مطور .NET محترف أو شريك تقني لبناء نظام مؤسسي قوي، يسعدني التواصل معك.</p>
+        </div>
+
+        <div class="contact-grid">
+          <article class="glass-card contact-info" data-reveal="right">
+            <h3 data-i18n="contactInfoTitle">معلومات التواصل</h3>
+            <ul>
+              <li><strong data-i18n="phoneLabel">Phone:</strong> <a href="tel:+201007487031">+20 100 748 7031</a></li>
+              <li><strong>WhatsApp:</strong> <a href="https://wa.me/201007487031" target="_blank" rel="noopener noreferrer" data-i18n="whatsappText">◉ WhatsApp Chat</a></li>
+              <li><strong data-i18n="emailLabel">Email:</strong> <a href="mailto:Devammarahmed@gmail.com">Devammarahmed@gmail.com</a></li>
+              <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ammar-ahmed-685833211" target="_blank" rel="noopener noreferrer">Ammar Ahmed</a></li>
+              <li><strong>GitHub:</strong> <a href="https://github.com/DevAmmarAhmed" target="_blank" rel="noopener noreferrer">DevAmmarAhmed</a></li>
+              <li><strong data-i18n="locationLabel">Location:</strong> <span data-i18n="heroLocation">Kafr El Sheikh, Egypt</span></li>
+            </ul>
+          </article>
+
+          <form class="glass-card contact-form" data-reveal="left">
+            <div class="form-group">
+              <label for="name" data-i18n="formName">الاسم</label>
+              <input id="name" name="name" type="text" data-i18n-placeholder="formNamePlaceholder" placeholder="اكتب اسمك" required>
+            </div>
+            <div class="form-group">
+              <label for="email" data-i18n="formEmail">البريد الإلكتروني</label>
+              <input id="email" name="email" type="email" data-i18n-placeholder="formEmailPlaceholder" placeholder="you@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="message" data-i18n="formMessage">الرسالة</label>
+              <textarea id="message" name="message" rows="5" data-i18n-placeholder="formMessagePlaceholder" placeholder="اكتب رسالتك هنا" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full" data-i18n="formSubmit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <h3>Ammar Ahmed Ibrahim</h3>
+        <p data-i18n="footerRole">Senior .NET Developer | ERP Specialist | Technical Project Manager</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://wa.me/201007487031" target="_blank" rel="noopener noreferrer" data-i18n="whatsappFooter">◉ WhatsApp</a>
+        <a href="https://www.linkedin.com/in/ammar-ahmed-685833211" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/DevAmmarAhmed" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:Devammarahmed@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
