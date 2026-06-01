@@ -397,3 +397,30 @@ contactForm?.addEventListener("submit", (event) => {
     button.disabled = false;
   }, 1800);
 });
+
+emailjs.init("8F61kV5kJ7UxoLurq");
+
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const templateParams = {
+        from_name: document.getElementById("name").value,
+        from_email: document.getElementById("email").value,
+        subject: "New Contact Form Submission",
+        message: document.getElementById("message").value,
+        time: new Date().toLocaleString()
+    };
+
+    try {
+        await emailjs.send(
+            "service_0wmhhdt",
+            "template_3bnqk4y",
+            templateParams
+        );
+
+        alert("Message sent successfully!");
+    } catch (error) {
+        console.error(error);
+        alert("Failed to send message.");
+    }
+});
