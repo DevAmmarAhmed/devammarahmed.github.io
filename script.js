@@ -11,6 +11,9 @@ const sections = document.querySelectorAll("main section[id]");
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
 const langToggle = document.getElementById("langToggle");
+const themeSwitch = document.getElementById("themeSwitch");
+const themeOptions = document.querySelectorAll("[data-theme-option]");
+const themeColorMeta = document.getElementById("themeColorMeta");
 const projectsGrid = document.getElementById("projectsGrid");
 const projectFilters = document.getElementById("projectFilters");
 const projectsCount = document.getElementById("projectsCount");
@@ -20,6 +23,12 @@ let activeProjectFilter = "all";
 const EMAILJS_PUBLIC_KEY = "8F61kV5kJ7UxoLurq";
 const EMAILJS_SERVICE_ID = "service_0wmhhdt";
 const EMAILJS_TEMPLATE_ID = "template_3bnqk4y";
+
+const THEME_STORAGE_KEY = "portfolio-theme";
+const THEME_COLORS = {
+  dark: "#0d1117",
+  light: "#f5f5f7"
+};
 
 const translations = {
   ar: {
@@ -142,6 +151,11 @@ const translations = {
     langToggleLabel: "Switch to English",
     navToggleOpen: "فتح القائمة",
     navToggleClose: "إغلاق القائمة",
+    themeGroupLabel: "اختيار المظهر",
+    themeLabelDark: "الوضع الداكن",
+    themeLabelLight: "الوضع الفاتح",
+    themeToggleDark: "تفعيل الوضع الداكن",
+    themeToggleLight: "تفعيل الوضع الفاتح",
     typing: ["Senior .NET Developer", "ERP Specialist", "Technical Project Manager"]
   },
   en: {
@@ -265,11 +279,17 @@ const translations = {
     langToggleLabel: "Switch to Arabic",
     navToggleOpen: "Open menu",
     navToggleClose: "Close menu",
+    themeGroupLabel: "Theme selection",
+    themeLabelDark: "Dark mode",
+    themeLabelLight: "Light mode",
+    themeToggleDark: "Switch to dark mode",
+    themeToggleLight: "Switch to light mode",
     typing: ["Senior .NET Developer", "ERP Specialist", "Technical Project Manager"]
   }
 };
 
 let currentLang = localStorage.getItem("portfolio-language") || "ar";
+let currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
 let typeIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -278,6 +298,114 @@ let emailJsReady = false;
 
 function t(key) {
   return translations[currentLang][key] || "";
+}
+
+function getSystemTheme() {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function resolveTheme(storedTheme) {
+  return storedTheme === "light" || storedTheme === "dark" ? storedTheme : getSystemTheme();
+}
+
+function updateThemeSwitchUI() {
+  if (!themeSwitch) return;
+
+  themeSwitch.dataset.active = currentTheme;
+  themeSwitch.setAttribute("aria-label", t("themeGroupLabel"));
+
+  themeOptions.forEach((button) => {
+    const option = button.dataset.themeOption;
+    const isActive = option === currentTheme;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-checked", String(isActive));
+    button.tabIndex = isActive ? 0 : -1;
+    button.setAttribute(
+      "aria-label",
+      option === "dark" ? t("themeToggleDark") : t("themeToggleLight")
+    );
+  });
+}
+
+function setThemeFromOption(theme) {
+  if (theme !== "dark" && theme !== "light") return;
+  if (theme === currentTheme) return;
+
+  document.documentElement.classList.add("theme-animate");
+  applyTheme(theme);
+  window.setTimeout(() => {
+    document.documentElement.classList.remove("theme-animate");
+  }, 320);
+}
+
+function handleThemeSwitchKeyboard(event) {
+  const isRtl = document.documentElement.dir === "rtl";
+  const goLight =
+    (event.key === "ArrowRight" && !isRtl) ||
+    (event.key === "ArrowLeft" && isRtl) ||
+    event.key === "ArrowDown";
+  const goDark =
+    (event.key === "ArrowLeft" && !isRtl) ||
+    (event.key === "ArrowRight" && isRtl) ||
+    event.key === "ArrowUp";
+
+  if (goLight) {
+    event.preventDefault();
+    setThemeFromOption("light");
+    themeSwitch?.querySelector('[data-theme-option="light"]')?.focus();
+  } else if (goDark) {
+    event.preventDefault();
+    setThemeFromOption("dark");
+    themeSwitch?.querySelector('[data-theme-option="dark"]')?.focus();
+  } else if (event.key === "Home") {
+    event.preventDefault();
+    setThemeFromOption("dark");
+    themeSwitch?.querySelector('[data-theme-option="dark"]')?.focus();
+  } else if (event.key === "End") {
+    event.preventDefault();
+    setThemeFromOption("light");
+    themeSwitch?.querySelector('[data-theme-option="light"]')?.focus();
+  }
+}
+
+function initThemeSwitch() {
+  themeOptions.forEach((button) => {
+    button.addEventListener("click", () => {
+      setThemeFromOption(button.dataset.themeOption);
+    });
+  });
+
+  themeSwitch?.addEventListener("keydown", handleThemeSwitchKeyboard);
+}
+
+function applyTheme(theme, persist = true) {
+  currentTheme = theme;
+  document.documentElement.setAttribute("data-theme", theme);
+  document.documentElement.style.colorScheme = theme;
+
+  if (themeColorMeta) {
+    themeColorMeta.setAttribute("content", THEME_COLORS[theme]);
+  }
+
+  if (persist) {
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
+  }
+
+  updateThemeSwitchUI();
+}
+
+function toggleTheme() {
+  setThemeFromOption(currentTheme === "dark" ? "light" : "dark");
+}
+
+function initTheme() {
+  const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+  applyTheme(resolveTheme(storedTheme), Boolean(storedTheme));
+
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
+    if (localStorage.getItem(THEME_STORAGE_KEY)) return;
+    applyTheme(event.matches ? "dark" : "light", false);
+  });
 }
 
 function applyTranslations(lang) {
@@ -319,6 +447,7 @@ function applyTranslations(lang) {
   });
 
   updateNavToggleLabel();
+  updateThemeSwitchUI();
   localStorage.setItem("portfolio-language", lang);
   renderProjectFilters();
   renderProjects();
@@ -690,6 +819,8 @@ function initEmailJs() {
 }
 
 window.addEventListener("load", () => {
+  initTheme();
+  initThemeSwitch();
   applyTranslations(currentLang);
   restartTyping();
   handleScrollState();
